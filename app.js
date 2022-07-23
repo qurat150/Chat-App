@@ -15,7 +15,7 @@ const login = () => {
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
     }
-    auth.signInUserWithEmailAndPassword(
+    auth.signInWithEmailAndPassword (
         loginData.email,
         loginData.password,
     )
