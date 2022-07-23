@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p{
+            margin-top: 15px;
+        }
+        p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="margin-top: 20px;">Your Data</h2>
+        <p id="userName"></p>
+        <p id="userEmail"></p>
+        <p id="userPassword"></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBPqlUTWA1DlEle3BR2HmsuxSQGGa9uCkA",
+            authDomain: "form-with-user-authentication.firebaseapp.com",
+            projectId: "form-with-user-authentication",
+            storageBucket: "form-with-user-authentication.appspot.com",
+            messagingSenderId: "474945854895",
+            appId: "1:474945854895:web:a00ee0c7459425d053235a",
+            measurementId: "G-F4178Z51BG"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth()
+        auth.onAuthStateChanged((user)=>{
+            if(!user){
+                window.location.href = "./index.html"
+            }
+        })
+    </script>
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
