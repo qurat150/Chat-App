@@ -46,6 +46,9 @@ body{
     margin-top: 10px;
     text-align: center;
 }
+#picture{
+    display: none;
+}
 .button{
     border-radius: 4px;
     margin-top: 30px;

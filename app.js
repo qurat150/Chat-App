@@ -1,13 +1,30 @@
 const register = () => {
     var registerData = {
-        name: document.querySelector("#username").value,
+        username: document.querySelector("#username").value,
         email: document.querySelector("#regEmail").value,
         password: document.querySelector("#regPassword").value,
     }
-    auth.createUserWithEmailAndPassword(
-        registerData.email,
-        registerData.password,
-    )
+    console.log(registerData.email);
+    console.log(registerData.password);
+    firebase.auth().createUserWithEmailAndPassword(registerData.email, registerData.password)
+    .then((res)=>{
+        let user = {
+            username : registerData.username,
+            email : registerData.email ,
+            password : registerData.password
+        }
+        const database = firebase.database()
+        database.ref(`users/${res.user.uid}`).set(user)
+        .then(()=>{
+            alert("New user is Registered !")
+        
+
+        console.log(res)
+        console.log(user)
+        console.log(user.uid)
+    })}).catch((err)=>{
+            console.log("err=>" , err)
+        })
 }
 const login = () => {
     var loginData = {
@@ -15,7 +32,7 @@ const login = () => {
         email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
     }
-    auth.signInWithEmailAndPassword (
+    auth.signInWithEmailAndPassword(
         loginData.email,
         loginData.password,
     )

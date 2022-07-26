@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(29, 41, 49);
+    font-family: sans-serif;
+}
+
+.heading {
+    color: white;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+.container {
+    position: relative;
+    background-color: rgb(14, 23, 29);
+    width: 33%;
+    height: 70%;
+    overflow: auto;
+    border-radius: 5px;
+    box-shadow: 5px 10px 8px rgb(5, 8, 10);
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(48, 59, 66);
+}
+
+.nav-flex {
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul li.nav-whatsapp-write,
+ul li.icons {
+    color: rgba(148, 164, 175, 0.603);
+    font-weight: 600;
+}
+
+ul .span {
+    margin-bottom: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(148, 164, 175, 0.603);
+}
+
+/* navbar completed */
+
+.button{
+    border-radius: 6px;
+    margin-top: 250px;
+    /* text-align: center; */
+    width: 200px;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: rgba(187, 202, 212, 0.37);
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(0, 0, 0);
+}
+.chats{
+    height: 50px;
+    width: 100%;
+}
+.chats ul li:hover {
+    background-color: rgba(112, 124, 133, 0.37);
+}
+.icon-archive {
+    color: #1abc9c;
+}
+.chat-item {
+    width: 100%;
+    display: flex;
+    padding: 10px 20px;
+}
+.chat-item .profile-section {
+    width: 15%;
+}
+
+.chat-item .profile-section img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.chat-item .detail-section {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-bottom: solid 1px gray;
+}
+.chat-item .detail-section .lastSeen{
+    color: rgba(148, 164, 175, 0.603);
+    font-size: 14px;
+    margin-top: -10px;
+}
+.nav-chat li{
+    height: 50px;
+}
+.nav-chat .detail-section{
+    border-bottom: none;
+}
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer .inputField-Section{
+    border-radius: 25px;
+    height: 30px;
+    width: 80%;
+    padding: 18px;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    border: none;
+    background-color:  rgba(112, 124, 133, 0.37);
+}
+.footer .mic{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    background-color: green;
+}
+.sendChat{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin: 10px 0 0 10px;
+    padding: 10px 10px 10px 10px;
+    word-break: break-all;
+    max-width: 70%;
+    border-radius: 10px;
+    min-width: 20%;
+    font-size: 18px;
+    background-color: #176b5b;
+}
+.sendChat .lastSeen{
+    color: rgba(148, 164, 175, 0.603);
+    font-size: 14px;
+}
+.names{
+    pointer-events: none;
+}
+.chatting-container{
+    display: none;
+}
+/* .home-container{
+    display: none;
+} */
