@@ -67,6 +67,9 @@ ul .span {
 /* navbar completed */
 
 .button{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
     border-radius: 6px;
     margin-top: 250px;
     /* text-align: center; */
@@ -93,10 +96,13 @@ ul .span {
 .chat-item {
     width: 100%;
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 15px;
 }
 .chat-item .profile-section {
     width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .chat-item .profile-section img {
@@ -118,10 +124,10 @@ ul .span {
     font-size: 14px;
     margin-top: -10px;
 }
-.nav-chat li{
+.chatting-area li{
     height: 50px;
 }
-.nav-chat .detail-section{
+.chatting-area .detail-section{
     border-bottom: none;
 }
 .footer{
@@ -165,7 +171,7 @@ ul .span {
     border-radius: 10px;
     min-width: 20%;
     font-size: 18px;
-    background-color: #176b5b;
+    background-color: #333f47;
 }
 .sendChat .lastSeen{
     color: rgba(148, 164, 175, 0.603);

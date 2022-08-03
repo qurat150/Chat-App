@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "firebase": "^9.9.1",
+    "lodash": "^4.17.21",
+    "serve": "^14.0.1",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  },
+  "name": "form-with-user-authentication",
+  "description": "\"# Form-with-user-Authentication\"",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qurat150/Form-with-user-Authentication.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qurat150/Form-with-user-Authentication/issues"
+  },
+  "homepage": "https://github.com/qurat150/Form-with-user-Authentication#readme"
+}
