@@ -45,21 +45,22 @@ const searchUser = () => {
         console.log("user not found")
     };
 
-    //suggestions code 
-    // let createSuggestions = document.createElement("div")
-    // createSuggestions.classList.add("helloss")
-    // document.querySelector("#searchSuggestion").append(createSuggestions)
-    // console.log(createSuggestions);
-    // const userSuggestions = () => {
-    //     userArr.forEach((userObj) => {
-    //         createSuggestions.innerHTML += userObj.username + "<br/>"
-
-           
-    //     })
-    // }
-    // document.querySelector("#getUserNameFOrChat").addEventListener("keydown", userSuggestions)
 }
 document.querySelector(".searchButton").addEventListener("click", searchUser)
+
+// suggestions code 
+let createSuggestions = document.createElement("div")
+createSuggestions.classList.add("helloss")
+document.querySelector("#searchSuggestion").append(createSuggestions)
+console.log(createSuggestions);
+const userSuggestions = () => {
+    userArr.forEach((userObj) => {
+        createSuggestions.innerHTML += userObj.username + "<br/>"
+
+
+    })
+}
+document.querySelector("#getUserNameFOrChat").addEventListener("click", userSuggestions)
 
 const changeMainScreenToChat = () => {
     document.querySelector(".home-container").style.display = "none"
