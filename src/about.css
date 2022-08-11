@@ -183,6 +183,44 @@ ul .span {
 .chatting-container{
     display: none;
 }
+/* rgba(148, 164, 175, 0.603); */
+.searchBar input{
+    margin: 15px 5px;
+    background-color: rgb(48, 59, 66);
+    padding: 10px;
+    width: 70%;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+}
+::placeholder{
+    font-size: 16px;
+    color: rgba(148, 164, 175, 0.603);
+    opacity: 1;
+}
+.chats .searchButton{
+    position: absolute;
+    top: 63px;
+    left: 72%;
+    border-radius: 6px;
+    width: 100px;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    background-color: rgba(187, 202, 212, 0.37);
+    cursor: pointer;
+    
+}
+.helloss{
+    height: 50px;
+    color: white;
+    background-color: rgb(170, 170, 170);
+    padding: 5px;
+    border-bottom: solid black;
+}
 /* .home-container{
     display: none;
 } */

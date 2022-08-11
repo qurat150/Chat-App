@@ -16,13 +16,15 @@ const register = () => {
 
             const getUserUid = usercredentials.user.uid
             console.log(usercredentials);
-            set(ref(db, "users/" + getUserUid), {
+            // set(ref(db, "users/" + "userUID" + " " + username),{
+            set(ref(db, `users/ userUID (${username})`), {
                 username: username,
+                id: getUserUid,
                 email: email,
             });
-            setTimeout(()=>{
+            setTimeout(() => {
                 window.location.href = "../dist/about.html"
-            }, 2000) 
+            }, 2000)
         }).catch((err) => {
             console.log("err => " + err.message)
         })
@@ -37,9 +39,9 @@ const login = () => {
     }
     signInWithEmailAndPassword(auth, loginData.email, loginData.password,)
         .then(() => {
-            setTimeout(()=>{
+            setTimeout(() => {
                 window.location.href = "../dist/about.html"
-            }, 2000) 
+            }, 2000)
         })
 }
 document.querySelector("#login").addEventListener("click", login)
