@@ -3,36 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* //0a1014 */
 body {
-    background-color: rgb(29, 41, 49);
     font-family: sans-serif;
 }
-
-.heading {
-    color: white;
-    margin-top: 25px;
-    text-align: center;
-    font-size: 30px;
-}
-
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 100px);
+    height: 100vh;
+    background-color: #222e35;
 }
-
 .container {
-    position: relative;
-    background-color: rgb(14, 23, 29);
-    width: 33%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     overflow: auto;
-    border-radius: 5px;
-    box-shadow: 5px 10px 8px rgb(5, 8, 10);
+    display: flex;
 }
+.home-container{
+    position: relative;
+    width: 33%;
+    height: 100%;
+    display: inline-block;
+    background-color: rgb(14, 23, 29);
+    border-right: .5px solid rgba(255, 246, 228, 0.877);
 
+}
 .navbar {
     width: 100%;
     height: 50px;
@@ -96,7 +89,7 @@ ul .span {
 .chat-item {
     width: 100%;
     display: flex;
-    padding: 10px 15px;
+    padding: 10px 10px;
 }
 .chat-item .profile-section {
     width: 15%;
@@ -116,8 +109,9 @@ ul .span {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px 5px;
     color: white;
-    border-bottom: solid 1px gray;
+    border-bottom: solid 1px rgba(126, 126, 126, 0.466);
 }
 .chat-item .detail-section .lastSeen{
     color: rgba(148, 164, 175, 0.603);
@@ -130,17 +124,33 @@ ul .span {
 .chatting-area .detail-section{
     border-bottom: none;
 }
+.chatting-container{
+    position: relative;
+    width: 68%;
+    height: 100%;     
+    background-color: rgb(14, 23, 29);
+    background-image: url("../dist/whatsapp-wallpaper.jpg");
+    display: inline-block;
+}
+
 .footer{
     width: 100%;
     position: absolute;
     bottom: 10px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(48, 59, 66);
+    background-color: #202c33;
+    height: 60px;
 }
-.footer .inputField-Section{
+.footer .typeMessageHere{
+width: 86%;
+}
+.footer .typeMessageHere .inputField-Section{
     border-radius: 25px;
     height: 30px;
-    width: 80%;
+    width: 100%;
     padding: 18px;
     outline: none;
     color: white;
@@ -148,7 +158,7 @@ ul .span {
     border: none;
     background-color:  rgba(112, 124, 133, 0.37);
 }
-.footer .mic{
+.footer .sendButton{
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -159,35 +169,34 @@ ul .span {
     color: white;
     background-color: green;
 }
-.sendChat{
+.MessageBox{
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    margin: 10px 0 0 10px;
-    padding: 10px 10px 10px 10px;
+    margin: 15px 0 0 70px;
+    padding: 8px;
     word-break: break-all;
-    max-width: 70%;
+    max-width: 45%;
     border-radius: 10px;
     min-width: 20%;
-    font-size: 18px;
+    font-size: 17px;
     background-color: #333f47;
 }
-.sendChat .lastSeen{
+.MessageBox .lastSeen{
     color: rgba(148, 164, 175, 0.603);
     font-size: 14px;
 }
 .names{
     pointer-events: none;
 }
-.chatting-container{
-    display: none;
-}
+
 /* rgba(148, 164, 175, 0.603); */
 .searchBar input{
     margin: 15px 5px;
     background-color: rgb(48, 59, 66);
-    padding: 10px;
+    padding: 9px;
+    font-size: 12px;
     width: 70%;
     color: white;
     border-radius: 8px;
@@ -202,13 +211,13 @@ ul .span {
 }
 .chats .searchButton{
     position: absolute;
-    top: 63px;
+    top: 65px;
     left: 72%;
     border-radius: 6px;
     width: 100px;
     padding: 8px;
     color: white;
-    font-size: 18px;
+    font-size: 14px;
     border: none;
     background-color: rgba(187, 202, 212, 0.37);
     cursor: pointer;
@@ -221,6 +230,11 @@ ul .span {
     padding: 5px;
     border-bottom: solid black;
 }
-/* .home-container{
+.loader{
+    color: white;
+    text-align: center;
+
+}
+.chatting-container{
     display: none;
-} */
+}

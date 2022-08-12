@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>live chat-app</title>
     <link rel="stylesheet" href="../src/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <h1 class="heading">live-chat-App</h1>
+<body id="onload">
     <div class="main">
         <div class="container">
             <div class="home-container">
@@ -39,23 +38,18 @@
                         <li class="searchBar" id="searchSuggestion">
                             <input id="getUserNameFOrChat" type="text" placeholder="Search user">
                             <button class="searchButton">Enter</button>
-                            
+
                         </li>
                         <li class="chat-item archived">
                             <div class="profile-section icon-archive"><i class="fa-solid fa-box-archive"></i></div>
                             <div class="detail-section">Archived</div>
                         </li>
-
-                        <li id="li" class="chat-item">
-                            <div class="profile-section">
-                                <img src="profile pic1.jpg">
-                            </div>
-                            <div class="detail-section">
-                                <div class="names">Qurat ul ain</div>
-                                <div class="lastSeen">7:28 PM</div>
-                            </div>
-                        </li>
                     </ul>
+                    <ul id="chatMenu">
+                        <div class="loader">Loading..</div> 
+                    </ul>
+
+
                 </div>
                 <button id="logout" class="button">Logout</button>
             </div>
@@ -75,19 +69,20 @@
                         </li>
                     </header>
                 </div>
-                    <footer class="footer">
-                        <input placeholder="Message" class="inputField-Section">
-                        <div id="sendMessage" class="mic">
-                            <div class="text-mic">></div>
-                        </div>
-                    </footer>
+                <footer class="footer">
+                    <div class="typeMessageHere">
+                        <input placeholder="Type Message" class="inputField-Section">
+                    </div>
+                    <div id="sendMessage" class="sendButton">
+                        <div class="text-mic">></div>
+                    </div>
+                </footer>
 
-                <div class="sendChat">
+                <div class="MessageBox">
                     <div class="chat-text">Hey ! Whassup</div>
                     <div class="lastSeen">11:25 AM</div>
                 </div>
             </div>
-
         </div>
     </div>
 

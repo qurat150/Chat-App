@@ -10,61 +10,55 @@ let userArr = [];
 onChildAdded(getUserForChat, (snapshot) => {
     const data = snapshot.val();
     userArr.push(data)
+    chatList()
 });
-const searchUser = () => {
-    console.log(userArr);
+const searchUser = document.querySelector("#getUserNameFOrChat").value
+const chatList = () => {
+    document.getElementById("chatMenu").innerHTML = ""
     let result = userArr.filter((userObj) => {
-        const chatList = document.querySelector("#getUserNameFOrChat").value
-        if (chatList == userObj.username) {
-            console.log("User Exist");
-            let createChatName = document.createElement("li")
-            createChatName.setAttribute("id", "li")
-            createChatName.classList.add("chat-item")
-            let createDiv1 = document.createElement("div")
-            createDiv1.classList.add("profile-section")
-            let createImgTag = document.createElement("img")
-            createImgTag.setAttribute("src", "profile pic1.jpg")
-            createChatName.append(createDiv1)
-            createDiv1.append(createImgTag)
-            let createDiv2 = document.createElement("div")
-            createDiv2.classList.add("detail-section")
-            createChatName.append(createDiv2)
-            let div2SubDiv1 = document.createElement("div")
-            div2SubDiv1.classList.add("names")
-            div2SubDiv1.innerHTML = chatList
-            createDiv2.append(div2SubDiv1)
-            let div2SubDiv2 = document.createElement("div")
-            div2SubDiv2.classList.add("lastSeen")
-            createDiv2.append(div2SubDiv2)
-            console.log(createChatName);
-            document.querySelector(".chats").append(createChatName)
-            return true
-        }
-    })
-    if (!result.length) {
-        console.log("user not found")
-    };
-
-}
-document.querySelector(".searchButton").addEventListener("click", searchUser)
-
-// suggestions code 
-let createSuggestions = document.createElement("div")
-createSuggestions.classList.add("helloss")
-document.querySelector("#searchSuggestion").append(createSuggestions)
-console.log(createSuggestions);
-const userSuggestions = () => {
-    userArr.forEach((userObj) => {
-        createSuggestions.innerHTML += userObj.username + "<br/>"
-
+        let createChatName = document.createElement("li")
+        createChatName.setAttribute("id", "li")
+        createChatName.classList.add("chat-item")
+        let createDiv1 = document.createElement("div")
+        createDiv1.classList.add("profile-section")
+        let createImgTag = document.createElement("img")
+        createImgTag.setAttribute("src", "profile pic1.jpg")
+        createChatName.append(createDiv1)
+        createDiv1.append(createImgTag)
+        let createDiv2 = document.createElement("div")
+        createDiv2.classList.add("detail-section")
+        createChatName.append(createDiv2)
+        let div2SubDiv1 = document.createElement("div")
+        div2SubDiv1.classList.add("names")
+        div2SubDiv1.innerHTML = userObj.username
+        createDiv2.append(div2SubDiv1)
+        let div2SubDiv2 = document.createElement("div")
+        div2SubDiv2.classList.add("lastSeen")
+        createDiv2.append(div2SubDiv2)
+        createChatName.addEventListener("click", changeMainScreenToChat)
+        document.querySelector("#chatMenu").append(createChatName)
+        return true
 
     })
+    // if (!result.length) {
+    //     console.log("user not found")
+    // };
 }
-document.querySelector("#getUserNameFOrChat").addEventListener("click", userSuggestions)
-
+let onSearch = ()=>{
+    let checking = userArr.filter((userObj)=>{
+        if (document.querySelector("#getUserNameFOrChat").value == userObj.username) {
+            let me = auth.currentUser.uid
+            console.log(me);
+            let user = document.querySelector("#getUserNameFOrChat").value
+            console.log(document.querySelector("#getUserNameFOrChat").value );
+            let uniqueChatId = [me, user].sort().join("")
+            console.log(uniqueChatId);
+        } else { console.log("user"); }
+    })
+}
+document.querySelector(".searchButton").addEventListener("click" , onSearch)
 const changeMainScreenToChat = () => {
-    document.querySelector(".home-container").style.display = "none"
-    document.querySelector(".chatting-container").style.display = "block"
+    document.querySelector(".chatting-container").style.display = "inline-block"
 
     const auth = getAuth()
 
@@ -94,10 +88,9 @@ const changeMainScreenToChat = () => {
             const messagesRef = ref(db, 'messages');
             onChildAdded(messagesRef, (snapshot) => {
                 const data = snapshot.val();
-                console.log(auth.currentUser.uid);
-                console.log(data);
+                // console.log(auth.currentUser.uid);
                 let createMessageBox = document.createElement("div")
-                createMessageBox.classList.add("sendChat")
+                createMessageBox.classList.add("MessageBox")
                 let textDiv = document.createElement("div")
                 textDiv.classList.add("Chat-text")
                 textDiv.innerHTML = data.message
@@ -106,10 +99,9 @@ const changeMainScreenToChat = () => {
                 lastSeenDiv.classList.add("lastSeen")
                 createMessageBox.append(lastSeenDiv)
                 document.querySelector(".chatting-container").append(createMessageBox)
-                console.log(createMessageBox);
                 lastSeenDiv.innerHTML = data.timeStamp
                 if (data.sender == auth.currentUser.uid) {
-                    createMessageBox.style.margin = "10px 110px"
+                    createMessageBox.style.margin = "10px 300px"
                     createMessageBox.style.backgroundColor = "#176b5b"
                     createMessageBox.style.width = "500px"
                 }
@@ -123,7 +115,7 @@ const logout = () => {
     firebase.auth().signOut()
 }
 document.querySelector("#logout").addEventListener("click", logout)
-document.getElementById("li").addEventListener("click", () => {
+document.getElementById("chatMenu li").addEventListener("click", () => {
     changeMainScreenToChat()
 })
 
@@ -143,3 +135,20 @@ document.getElementById("li").addEventListener("click", () => {
     //     amPm = "AM"
     // }
   // let finalTime = `${getHours}:${getMins} ${amPm}`
+
+
+    // document.body.addEventListener("load", chatList)
+    // document.querySelector(".searchButton").addEventListener("click", chatList)
+    // suggestions code 
+    // let createSuggestions = document.createElement("div")
+    // createSuggestions.classList.add("helloss")
+    // document.querySelector("#searchSuggestion").append(createSuggestions)
+    // console.log(createSuggestions);
+    // const userSuggestions = () => {
+    //     userArr.forEach((userObj) => {
+    //         createSuggestions.innerHTML += userObj.username + "<br/>"
+    
+    
+    //     })
+    // }
+    // document.querySelector("#getUserNameFOrChat").addEventListener("click", userSuggestions)
