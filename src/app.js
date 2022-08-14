@@ -16,7 +16,6 @@ const register = () => {
 
             const getUserUid = usercredentials.user.uid
             console.log(usercredentials);
-            // set(ref(db, "users/" + "userUID" + " " + username),{
             set(ref(db, `users/ userUID (${username})`), {
                 username: username,
                 id: getUserUid,
