@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>live chat-app</title>
+    <link rel="stylesheet" href="../src/about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="home-container">
+          <!-- Navbar -->
+          <div class="navbar">
+            <ul class="nav-flex">
+              <li class="nav-whatsapp-write">WhatsApp</li>
+              <li class="icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </li>
+              <li class="dots-navbar">
+                <ul>
+                  <li class="span"><span></span></li>
+                  <li class="span"><span></span></li>
+                  <li class="span"><span></span></li>
+                </ul>
+              </li>
+              <img
+                src="./images/profile pic1.jpg"
+                alt="Avatar"
+                class="avatar"
+              />
+            </ul>
+            <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+          </div>
+          <!-- Navbar Completed -->
+
+          <!-- Chats-Section  -->
+          <div class="chats">
+            <ul>
+              <li class="searchBar" id="searchSuggestion">
+                <input
+                  id="getUserNameFOrChat"
+                  type="text"
+                  placeholder="Search user"
+                />
+                <button class="searchButton">Enter</button>
+              </li>
+              <li class="chat-item archived">
+                <div class="profile-section icon-archive">
+                  <i class="fa-solid fa-box-archive"></i>
+                </div>
+                <div class="detail-section">Archived</div>
+              </li>
+            </ul>
+            <ul class="chatMenu">
+              <div class="loader">Loading..</div>
+            </ul>
+          </div>
+          <button id="logout" class="button">Logout</button>
+        </div>
+
+        <!-- Chatting-Page -->
+        <div class="chatting-container">
+          <div class="chatting-area navbar">
+            <header>
+              <li class="chat-item">
+                <div class="profile-section">
+                  <img src="./images/profile pic1.jpg" />
+                </div>
+                <div class="detail-section">
+                  <div class="chatName">Qurat ul ain</div>
+                  <div class="calling-area">call</div>
+                </div>
+              </li>
+            </header>
+          </div>
+          <div id="messages">
+            <!-- <div class="MessageBox">
+                        <div class="chat-text">Hey ! Whassup</div>
+                        <div class="lastSeen">11:25 AM</div>
+                    </div> -->
+          </div>
+          <footer class="footer">
+            <div class="typeMessageHere">
+              <input placeholder="Type Message" class="inputField-Section" />
+            </div>
+            <div id="sendMessage" class="sendButton">
+              <div class="text-mic">></div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script type="module" src="../src/config.js"></script>
+    <script type="module" src="../src/about.js"></script>
+  </body>
+</html>
